@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易新闻右侧列表</title>
+    <link rel="stylesheet" href="./css/reset.css">
+
+    <style>
+
+        body{
+            background-color: silver;
+        }
+        a{
+            text-decoration: none;
+        }
+        
+        .news-block{
+            width: 300px;
+            height: 358px;
+            /* 最顶部的一根灰线 */
+            background-color: #FFFFFF;
+            border-top: 1px #DDDDDD solid;
+            margin: 100px auto;
+        }
+
+        .news-title{
+            /* color: #404040; */
+            display: inline-block;
+            font-size: 16px;
+            height: 25px;
+            /* position: relative; */
+            border-top:1px solid #F34540;
+            margin-top: -1px;
+            padding-top: 6px;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+        .news-title>*{
+            color: #404040;
+        }
+
+        .news-img .img-title{
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-top: -30px;
+            padding-left: 30px;
+        }
+        .news-list{
+            padding-top: 20px;
+            
+        }
+
+        .news-title a:hover, .news-list a:hover{
+            color: #F34540;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 创建网易新闻右侧边栏新闻块 -->
+    <div class="news-block">
+        <!-- 新闻分类标题 -->
+        <h2 class="news-title">
+            <a href="#">军事</a>
+            ·
+            <a href="#">航空</a>
+        </h2>
+        
+        <!-- 新闻图片展示 -->
+        <div class="news-img">
+            <a href="#">
+                <img src="./img/03/1.jpg" alt="">
+                
+                <h3 class="img-title">端午节西藏军区中将带队巡逻边境</h3>
+                
+            </a>
+        </div>
+
+        <ul class="news-list">
+            <li>
+                <a href="#">炸裂！4千多米高原腹地实弹射击考核实拍</a>
+            </li>
+            <li>
+                <a href="#">柬埔寨采购的290辆上汽红岩卡车到货</a>
+            </li>
+            <li>
+                <a href="#">航拍黄河刘家峡水库开闸泄洪</a>
+            </li>
+            <li>
+                <a href="#">法国重新开放巴黎奥利机场</a>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

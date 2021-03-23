@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            /*width: auto;*/
+            width: 500px;
+            height: 500px;
+            background-color: turquoise;
+            /*position: absolute;*/
+            /*left: 100px;*/
+            /*right: 100px;*/
+            /*left: auto;*/
+            /*right: auto;*/
+        }
+
+        .box2{
+            width: 150px;
+            height: 150px;
+            background-color: tomato;
+            margin-left: 100px;
+            /*position: absolute;*/
+            z-index: 99;
+        }
+        .box22{
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+            position: relative;
+            top: -50px;
+            z-index: 2;
+        }
+        .box23{
+            width: 200px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+            top: 70px;
+            z-index: 3;
+        }
+        /*.s1{*/
+        /*    position: absolute;*/
+        /*    height: 100px;*/
+        /*    !*width: 100px;*!*/
+        /*    border: 1px solid red;*/
+        /*}*/
+        /*.box3{*/
+        /*    height: 100px;*/
+        /*    width: 100px;*/
+        /*    background-color: yellow;*/
+        /*    !*position: absolute;*!*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box22"></div>
+        <div class="box23"></div>
+        <div class="box24"></div>
+
+
+
+    </div>
+
+    <span class="s1"><div class="box3"></div></span>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器</title>
+    <style>
+
+        /* 
+            伪元素，表示页面中一些特殊的并不真实的存在的元素（特殊的位置）
+                伪元素使用 :: 开头
+
+                ::first-letter 表示第一个字母
+                ::first-line 表示第一行
+                ::selection 表示选中的内容
+                ::before 元素的开始 
+                ::after 元素的最后
+                    - before 和 after 必须结合content属性来使用
+        */
+
+        p.p::first-letter{
+            font-size: 25px;
+        }
+        p::selection{
+            color: cyan;
+        }
+        div::before{
+            content: "〔";
+        }
+        div::after{
+            content: "〕";
+        }
+    </style>
+</head>
+<body>
+    <div>这是随便的一句话</div>
+    <p>床前明月光，疑是地上霜。举头望明月，低头思故乡。</p>
+    <br>
+    <br>
+    <br>
+    <p class="p">今夜月明人尽望！</p>
+</body>
+</html>

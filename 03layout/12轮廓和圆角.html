@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮廓和圆角</title>
+
+    <style>
+
+        .box1{
+            height: 200px;
+            width: 200px;
+            background-color: aquamarine;
+            /* border: 20px red solid; */
+            /* 
+                outline：用来设置元素的轮廓线，用法和border一样
+                    -经过border-radius处理的盒子使用outline，仍然为原来模样的Outline,不会随之变化
+                    outline和border不同点是：border会使自己和其他元素位置发生改变
+                    outline不会影响任何元素的位置，是直接在元素外边套一层，不会挤压其他元素
+             */
+            outline: tomato 50px solid;
+            /* 
+                box-shadow:用来设置元素的阴影效果，阴影和Outline一样不会影响页面布局
+                    会随着border-radius而变化形状
+                        默认情况下阴影在元素正下方，可以通过设置左侧和顶部偏移量来设置阴影位置
+                        第一个值为水平偏移量,正值向右移（可以负值），
+                        第二个值为垂直偏移量，正值向下移（可以负值）
+                        第三个值为阴影的模糊半径
+             */
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, .2) 20px 0px 15px 5px;
+            /* margin-bottom: 50px; */
+        }
+        .box11{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            /* outline: red 50px solid; */
+        }
+        .box11:hover{/*鼠标移入会有效果*/
+            outline: black 50px solid;
+        }
+        .box2{
+            height: 200px;
+            width: 200px;
+            background-color: #bfa;
+            border: 50px red double;
+            padding: 50px;
+            margin: 50px;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(20, 100, 200, 0.3);
+            /* border-radius:用来设置圆角 设置圆角半径大小*/
+             /* 
+                border-radius 可以分别指定四个角的圆角
+                    四个值 左上 右上 右下 左下
+                    三个值 左上 右上/左下 右下 
+                    两个值 左上/右下 右上/左下  
+              */
+
+            border-top-left-radius: 50px 100px;
+            /* border-top-right-radius: ;
+            border-bottom-right-radius: ;
+            border-bottom-left-radius: ;*/
+            border-radius: 20px 30px 40px 50px;
+            border-radius: 30px/80px;
+
+            /* 将元素设置为一个圆形 */
+            border-radius: 50%;
+
+            box-shadow: 0px 10px 10px 10px rgba(255, 0, 0, .3);
+
+
+        } 
+
+    </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box11"></div>
+    <div class="box2"></div>
+    <!-- <span>我是span</span> -->
+    <div class="box3"></div>
+</body>
+</html>

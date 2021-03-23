@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3school导航条</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .nav-wrapper{
+            width: 100%;
+            margin: 100px auto;
+        }
+        .nav-wrapper .nav{
+            width: 1210px;
+            height: 48px;
+            margin: 0 auto;
+            background-color: #E8E7E3;
+            display: flex;
+            /* line-height: 48px; 在这里设置行高也是可以的*/
+        }
+        .nav-wrapper .nav li{
+            flex-grow: 1;
+        }
+        .nav-wrapper .nav a{
+            display: block;
+            text-decoration: none;
+            color: #808080;
+            font-size: 16px;
+            /* !!!!!!!!!!!!!!!!!!!!！！！！！！！！！！！
+                text-align是将块元素内的文本、行内元素水平居中
+                ！！！！！！！！！！！！！！！！！！！！！！！
+            */
+            text-align: center;
+            /* vertical-align: bottom; 设置给inline inline-block table-cell元素*/
+            /* flex-grow: 1; a的父元素为li，li没有开启为弹性盒，
+                即使Li开启为弹性盒，a也只是撑满li，并不能撑满ul*/
+            line-height: 48px;
+        }
+        .nav a:hover{
+            background-color: #636363;
+            color: #fff;
+        }
+        .box1{
+            width: 800px;
+            height: 200px;
+            border: olive solid 1px;
+            text-align: center;
+            /* line-height: 100px; */
+            /* vertical-align: middle; */
+            /* line-height: 2; */
+        }
+        .a1{
+            /* line-height: 100px; */
+            /* vertical-align: bottom; */
+            display: block;
+            width: 200px;/*！！！！！！！！！！！！！！！！！！！！！！！！
+                            已经display为block，所以不设置宽度就默认撑满，
+                            撑满后内部字体就在a的block内水平居中了，
+                            也就是text-align可以传递？？！！！！！！！！*/
+        }
+        .a2{
+            line-height: 5;
+        }
+        .s1{
+            line-height: 4;
+            vertical-align: bottom;
+        }
+        .s2{
+            line-height: 8;
+            vertical-align: top;
+        }
+        .box2{
+            border: 1px solid red;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li><a href="#">HTML/CSS</a></li>
+            <li><a href="#">Browser Side</a></li>
+            <li><a href="#">Server Side</a></li>
+            <li><a href="#">Programming</a></li>
+            <li><a href="#">XML</a></li>
+            <li><a href="#">Web Building</a></li>
+            <li><a href="#">Reference</a></li>
+        </ul>
+    </div>
+    <div class="box1">
+        <div class="box2"></div>
+        <a class="a1" href="#">我是a1</a>
+        <a class="a2" href="#">nishishui</a>
+        
+        <!-- <br> -->
+        <span class="s1">hahaha</span>
+        <span class="s2">我是第二个span</span>
+    </div>
+</body>
+</html>

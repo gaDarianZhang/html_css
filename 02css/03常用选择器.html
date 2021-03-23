@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用选择器</title>
+
+    <style>
+
+        /* 
+        
+            1️⃣将所有段落设置为青色（字体）
+
+                元素（标签）选择器：
+                    作用：根据标签名来选中指定的元素
+                    语法：标签名{}
+                    例子：p{} h1{} div{}
+
+        */
+
+        p{
+            color: turquoise;
+            font-size: 30px;
+        }
+
+        /* 
+            2️⃣将第三段设置为红色
+
+                id选择器：
+                    作用：根据元素的id属性选中一个元素
+                    语法：#id值{}
+        */
+        #p3{
+            color: red;
+            font-size: 10px;
+        }/* 会有覆盖作用，也即我在1️⃣中把所有段落都设置为青色后，在2️⃣中我又修改其中的第三段为红色 */
+
+        /* 
+            3️⃣将第四第五段设置为黄色
+
+                class选择器（类选择器）：
+                    作用：根据元素的class属性选中一组元素
+                    语法：.class属性值{}
+
+        */
+        .ye{
+            color: sandybrown;
+            font-size: 20px;
+        }
+
+        .bl{
+            color: blueviolet;
+        }
+
+        /* 
+            4️⃣修改页面中所有内容字体大小
+
+                通配选择器：
+                    作用：选中页面中所有的元素
+                    语法：*{}
+        */
+
+        *{
+            font-size: 60px;
+            color: black;
+        }/* 通配选择器好像没有覆盖性 */
+    </style>
+
+</head>
+<body>
+    <h1 class="ye bl">这是一个一级标题</h1>
+    <p>这是第一段</p>
+    <p>这是第二段</p>
+    <p id="p3">这是第三段</p>
+    <!--
+        class：
+            class是一个标签属性，和id类似，但每个元素的id不能重复，而class可以被多个元素重复使用
+            可以通过class属性为元素分组
+            一个元素可以有多个class,这多个class值都在一个引号内，通过空格分开
+    -->
+    <p class="ye">这是第四段</p>
+    <p class="ye">这是第五段</p>
+</body>
+</html>

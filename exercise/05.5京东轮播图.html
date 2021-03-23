@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东轮播图</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .img-list{
+            width: 590px;
+            height: 470px;
+            margin: 100px auto;
+            position: relative;/*用于给img-button定位*/
+        }
+
+        .img-list li{
+            /* 让元素脱离文档流，且元素重叠，使图片重叠在一块 */
+            position: absolute;
+        }
+
+        .img-list li:nth-child(2){
+            z-index: 1;
+        }
+
+
+        .img-list .img-button{
+            position: absolute;
+            z-index: 9999;
+            bottom: 20px;
+            left: 40px;
+        }
+
+        .img-list .img-button a{
+            /* display: block; */
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .3);
+            margin-left: 5px;
+        }
+
+        .img-button a:hover{
+            background-color: white;
+            /* outline: 2px solid rgba(255, 255, 255, .3); */
+            box-shadow: rgba(255, 255, 255, .3) 0 0 2px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <ul class="img-list">
+        <li>
+            <a href="javascript:;"><img src="./img/05/1.jpg"></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./img/05/2.jpg"></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./img/05/3.jpg"></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./img/05/4.jpg"></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./img/05/5.jpg"></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./img/05/6.jpg"></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./img/05/7.jpg"></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./img/05/8.jpg"></a>
+        </li>
+        <div class="img-button">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+</body>
+</html>

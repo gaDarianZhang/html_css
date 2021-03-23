@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本的样式</title>
+    <style>
+        div {
+            width: 1000px;
+            border: 1px red solid;
+
+            /* 
+                text-align 文本的水平对齐
+                    可选值：
+                        left 左侧对齐
+                        right 右对齐
+                        center 居中对齐
+                        justify 两端对齐
+            */
+            /* text-align: center; */
+
+            font-size: 10px;
+        }
+
+        span {
+            font-size: 20px;
+            border: 1px blue solid;
+
+            /*
+                vertical-align 设置元素垂直对齐的方式
+                    可选值：
+                        baseline 默认值 基线对齐
+                        top 顶部对齐
+                        bottom 底部对齐
+                        middle 居中对齐
+                        xxpx 还可以直接指定像素值
+                */
+            vertical-align: top;
+        }
+
+        p {
+            border: 1px red solid;
+
+        }
+
+        /* 不改变对图片的对齐方式的话，底部会有一个基线，和父类元素底部会有一定间隔，
+            只要把vertical-align修改为不是baseline就可以消除缝隙
+        */
+        img {
+            /* vertical-align: top; */
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        今天天气 Helloyxdfasfdsfsadfsdfaswesdfas<span>真不错Hello</span>dafsdfsadsdgasfdfdfasdfas！
+    </div>
+
+    <!-- <div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo nihil iure at ab atque nostrum molestiae totam porro, dolorem maiores repudiandae molestias veritatis, eligendi laudantium incidunt dolores corporis? Quibusdam, consequatur.
+    </div> -->
+
+
+    <p>
+        <img src="./img/an.jpg" alt="">
+    </p>
+</body>
+
+</html>

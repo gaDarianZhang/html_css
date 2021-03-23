@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 200px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /*line-height: 50px;*/
+
+        }
+        .box a{
+            font-size: 50px;
+            text-decoration: none;
+            border: 1px solid red;
+        }
+        a:first-of-type{
+            /*margin-top: 20px;*/
+            font-size: 20px;
+        }
+
+
+        .box1{
+            width: 500px;
+            height: 200px;
+            border: 2px solid red;
+            margin: 50px auto;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+
+        }
+        .box2:first-child{
+            background-color: #1d92ff;
+        }
+        .box2:nth-of-type(2){
+            background-color: #bbffaa;
+        }
+        .box2:nth-child(3){
+            background-color: mediumpurple;
+        }
+        .box1 a{
+            color: red;
+        }
+        .box1 a:nth-child(2){
+            color: #1d92ff;
+        }
+
+        .wrapper{
+            line-height: 200px;
+        }
+        .wrapper img{
+            width: 200px;
+            display: inline-block;
+        }
+
+        .wrapper2{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            line-height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <a href="#">连接1</a>
+    <a href="#">连接2</a>
+    <a href="#">连接3</a>
+<!--    <img src="../exercise/img/17/cover.png" alt="alt" title="title">-->
+</div>
+
+<div class="box1">
+    <div class="box2"><a href="#">a1</a></div>
+    <div class="box2"><a href="#">a2</a></div>
+    <div class="box2"></div>
+</div>
+
+<div class="wrapper"><a href="#"><img src="../img/png/w.png" alt=""></a><span>nishishuis</span></div>
+<div class="wrapper2"><span>nishishui</span></div>
+</body>
+</html>

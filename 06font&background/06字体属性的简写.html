@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体属性的简写</title>
+    <style>
+        div{
+            border: 1px red solid;
+            /* 
+                font可以设置字体的相关属性
+                    语法：
+                        font: 字体weight 字体style 字体大小/行高 字体族
+                            -后三个必须按照顺序写
+                            -字体weight 字体style 和行高可以省略不写，不写的话就是默认值，
+                                而且即使前边已经对这三个进行了修改，在这里也会把他们重置回默认值
+            */
+            font-size: 40px;
+            font-weight: bold;/*加粗*/
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;/*斜体*/
+            line-height: 2;
+            font: bold 30px 'Times New Roman', Times, serif;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>今天天气真不错！Hello,hello</div>
+</body>
+</html>

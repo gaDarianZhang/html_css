@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clearfix类解决外边距重叠和高度塌陷问题</title>
+    <style>
+        .box1{
+            /* height: 200px; */
+            /* width: 200px; */
+            background-color: skyblue;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: slateblue;
+            margin-top: 50px;
+            float: left;
+        }
+        .box3{
+            width: 150px;
+            height: 150px;
+            background-color: slategray;
+            float: left;
+            margin: 20px 0 20px 20px;
+        }
+        /* 完美解决子元素和父元素外边距重叠问题 */
+        /* .box1::before{
+            content: '';
+            display: table;
+        } */
+        /* 习惯用法，给父元素加上一个类名：clearfix */
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+
+</html>

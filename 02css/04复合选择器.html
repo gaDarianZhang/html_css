@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+
+    <style>
+        /* 将class为re的元素设置为红色 */
+        .re {
+            color: red;
+        }
+
+        /* 将class为re的div字体大小设置为30px */
+        /* 
+            交集选择器：
+                作用：选择同时满足多个条件的元素
+                语法：选择器1选择器2选择器3{}
+                注意：交集选择器中如果有元素选择器，必须使用元素选择器开头
+        */
+        div.re {
+            font-size: 30px;
+        }
+
+        div#div_re.re {
+            color: yellow;
+        }
+
+        .re.bl {
+            font-size: 100px;
+        }
+
+        /* 
+            并集选择器（选择器分组）
+                作用：同时选择多个选择器对应的元素
+                语法：选择器1,选择器2,选择器3
+
+                #b1,.p1,h1,span,div.re{}
+        */
+        h1,
+        span {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="re">我是div</div>
+    <div class="re" id="div_re">我是第二个div</div>
+
+    <p class="re">我是p元素</p>
+    <p class="bl re">我是第二个p元素</p>
+    <p class="bl">我是第三个p元素</p>
+
+    <h1>标题1</h1>
+    <span>span1</span>
+    <span>span2</span>
+
+</body>
+
+</html>

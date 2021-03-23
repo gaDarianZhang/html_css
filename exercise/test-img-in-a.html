@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 
+    ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+        其实在这里边，a内的图片并不能把a撑起（除非a改为block），图片溢出。而且默认情况下，
+        文字和图片是并排的，在一行(因为图片不是block元素，不会独占一行。block的话就会自动把文字挤到另一行了)。
+        只是因为把图片宽度设置为了父元素的100%(这里的父元素不是a，而是祖先元素box2。因为a作为行内元素，是没有固定宽度的),
+        就把span文字给挤下去了
+    */
+    .box1{
+        height: 400px;
+        border: brown 1px solid;
+        margin-bottom: 30px;
+    }
+    .box2{
+        /* height: 200px; */
+        width: 250px;
+        border: 1px solid orange;
+    }
+    #a1{
+        /* display: block; */
+        /* width: 100px; */
+        border: aqua 1px solid;
+    }
+    #img1{
+        width: 100%;
+        /* width: 200px; */
+    }
+
+    #a2{
+        border: 1px red solid;
+        /* line-height: 3; */
+        display: block;
+        width: 100px;
+    }
+    .box3{
+        height: 100px;
+        width: 20px;
+        background-color: cadetblue;
+    }
+</style>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <a id="a1" href="#">
+                <img id="img1" src="./img/16/1.png" alt="">
+                <span>a的高度没有被img给撑起</span>
+            </a>
+        </div>
+        
+    </div>
+    <a id="a2" href="#">
+        <div class="box3"></div>
+        <img src="./img/16/3.png" alt="">
+        asdfasfsdfasdsfsa
+        <span></span>
+        
+    </a>
+</body>
+</html>

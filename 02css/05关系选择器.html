@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系选择器</title>
+
+    <style>
+        /* 
+            子元素选择器：
+                作用：选中指定父元素的指定子元素
+                语法：父元素>子元素
+        */
+        div>p{ /*把p元素的字以及p元素内的span的字都给改变了 */
+            color: hotpink;
+        } /*把两个外围div内的东西都给改了 */
+        div.di>p{/*只修改class为di的div内的*/
+            color: greenyellow;
+        }
+        div>span{/*把div内所有的子span都改了*/
+            color: green;
+        }
+        /* 
+            后代元素选择器：
+                作用：选中后代咯
+                语法：祖先元素 后代元素
+        */
+        div>p>span{
+            color: grey;
+        }
+        div span{/*其实在刚开始就这样搞的话，div内所有的
+            直接或间接span都会变色，但放在后边这里的话，
+            就改不了p内的span了。测试发现如果把👆一个div>p>span
+            删掉或者放后边的话就可以了
+                ！！！！这其实是选择器的权重问题
+            */
+            color: #ff0000;
+        }
+        /* 
+            兄弟选择器：选不到前边的兄弟
+                选择下一个近邻兄弟：必须是紧接着的
+                    语法：元素+元素
+                选择下边所有的兄弟：可以中间隔着其他类型的元素
+                    语法：元素~元素
+        */
+        /*第二个div内的p+span也会被改变*/
+        p+span{
+            font-size: 100px;
+            color: saddlebrown;
+        }
+        p~span{/*第二个div内的p~span也会被改变*/
+            font-size: 50px;
+            /* color: saddlebrown; */
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- 
+
+        父元素
+            -直接包含子元素的元素叫做父元素
+        子元素
+            -直接被父元素包含的元素是子元素
+        祖先元素
+            -直接（即它的子元素）或间接（它的子元素的子元素。。。）
+                包含后代元素的元素叫做祖先元素
+            -一个元素的父元素，爷爷元素。。都是它的祖先元素
+        后代元素
+            -一个元素直接或间接包含的元素（子元素，孙子元素。。）
+            -子元素也是后代元素
+        兄弟元素
+            -拥有相同父元素的元素是兄弟元素
+
+     -->
+
+     <div>
+         我是第一个最外边的div
+         <p>
+             我是第一个最外边的div的子元素
+            <span>我是前边p元素内的span</span>
+         </p>
+         <div></div>
+         <span>我是div中的直接span1</span>
+         <span>我是div中的直接span2</span>
+         <span>我是div中的直接span3</span>
+     </div>
+
+     <div class="di">
+         我是第二个最外围的div
+         <p>
+             我是第二个最外边的div的子元素
+         </p>
+         <span>我是第二个div内的和p近邻的span</span>
+     </div>
+     
+
+</body>
+</html>

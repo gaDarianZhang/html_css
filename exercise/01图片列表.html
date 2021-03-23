@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东图片列表</title>
+    <link rel="stylesheet" href="./css/reset.css">
+
+    <style>
+        body{
+            background-color: burlywood;
+        }
+
+        /* 设置外部的ul样式 */
+        .img-list{
+            /* 设置ul宽度 */
+            width: 237px;
+            /* 设置ul高度 */
+            height: 587px;
+            /* 设置ul背景颜色 */
+            background-color: #F4F4F4;
+            /* 裁剪溢出的内容 */
+            overflow: hidden;
+            /* 使ul在页面中居中（在实际开发中这一句不需要） */
+            margin: 50px auto;
+
+        }
+
+        .img-list li:not(:last-child){
+            margin-bottom: 12px;
+        }
+
+        .img-list img{
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="img-list">
+        <li>
+            <a href="javascript:;">
+                <img src="./img/01/1.png" alt="">   
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./img/01/2.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./img/01/3.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超链接</title>
+</head>
+
+<body>
+    <!--
+        超链接可以让我们从一个页面跳转到其他页面，或者本页面的其他位置。
+        使用a标签来定义超链接
+        属性：
+            -href 指定跳转的目标路径
+                它的值可以是一个外部网站的地址，也可以写内部页面的地址
+
+        超链接也是一个行内元素，但是在a中可以嵌套除了a自身外的任何元素
+        （也即，这是一个行内元素中能放置其他元素的特例）
+    -->
+
+    <a href="https://www.baidu.com">
+        <p>
+            这是一个p元素，测试一下超链接a里边放置一个块元素
+        </p>
+    </a>
+    <br>
+    <br>
+    <a href="No7列表.html">超链接2</a>
+    <!--
+        当我们需要跳转到一个服务器内部的页面时，一般我们会使用相对路径
+    -->
+
+    <!--
+        怎么在浏览器的一个新标签页打开超链接，使用target属性
+        - target:用来指定超链接的打开位置
+            _self:默认值，在当前标签页面中打开
+            _blank：在新的标签页中打开超链接
+    -->
+    <br><br><br>
+    <a href="No-meta.html" target="_blank">超链接3</a>
+    <a href="No-块和行内元素.html" target="_self">超链接4</a>
+
+    <!--
+        测试跳转到本页其他位置
+            -#：单一个#表示回到顶部
+            -#id：#加id表示跳转到指定id的标签位置
+            -id属性（唯一的且不重复）
+                每一个标签都可以添加一个id属性，是元素的唯一标识，且区分大小写，一般都用字母
+
+            -"javascript:;" :作为href的值，表示一个超链接的占位符，点击后没有任何反应
+    -->
+    <br><br>
+    <a href="#bottom">我要去底部了</a>
+    <br><br>
+    <a href="#par3" target="_blank">我去第三段的位置了</a>
+    <br><br>
+    <a href="javascript:;">我是一个超链接占位符</a>
+    <p>par1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde praesentium cupiditate quibusdam
+        veritatis, totam ex ducimus aut exercitationem? Quia aliquid dolorem inventore fuga corrupti, reprehenderit
+        distinctio reiciendis quisquam tempore.</p>
+    <p>par2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde praesentium cupiditate quibusdam
+        veritatis, totam ex ducimus aut exercitationem? Quia aliquid dolorem inventore fuga corrupti, reprehenderit
+        distinctio reiciendis quisquam tempore.</p>
+    <p id="par3">par3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde praesentium cupiditate
+        quibusdam veritatis, totam ex ducimus aut exercitationem? Quia aliquid dolorem inventore fuga corrupti,
+        reprehenderit distinctio reiciendis quisquam tempore.</p>
+    <p>par4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde praesentium cupiditate quibusdam
+        veritatis, totam ex ducimus aut exercitationem? Quia aliquid dolorem inventore fuga corrupti, reprehenderit
+        distinctio reiciendis quisquam tempore.</p>
+    <p>par5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde praesentium cupiditate quibusdam
+        veritatis, totam ex ducimus aut exercitationem? Quia aliquid dolorem inventore fuga corrupti, reprehenderit
+        distinctio reiciendis quisquam tempore.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde praesentium cupiditate quibusdam veritatis,
+        totam ex ducimus aut exercitationem? Quia aliquid dolorem inventore fuga corrupti, reprehenderit distinctio
+        reiciendis quisquam tempore.</p>
+    <p>6月22日，加拿大前司法部长艾伦·洛克在接受加主流媒体《环球邮报》采访时表示，加拿大政府现在完全有合法权力释放孟晚舟，但特鲁多不愿这么做，只因他仍对去年“SNC兰万灵贪腐案”中被揭露用政治干预司法感到尴尬。
+
+        目前孟晚舟引渡案进行到庭审阶段，洛克认为可能要到2024年法官才会对该案作出裁决。最新消息称，孟晚舟引渡案的相关日程已经排到了2021年4月份。下一次出庭可能会在8月份。
+
+        两天前，特鲁多就以“加政府无法干预司法系统”、“司法独立”为由，称绝对不会用释放孟晚舟来作为交换两名加拿大人的筹码。我外交部发言人赵立坚对此回击说，加方在所谓司法独立问题上奉行的完全是双重标准。孟晚舟事件是一起严重的政治事件，美方的目的是为了打压中国高技术企业和华为公司，而加拿大则扮演了美方帮凶的角色。
+    </p>
+    <p>6月22日，加拿大前司法部长艾伦·洛克在接受加主流媒体《环球邮报》采访时表示，加拿大政府现在完全有合法权力释放孟晚舟，但特鲁多不愿这么做，只因他仍对去年“SNC兰万灵贪腐案”中被揭露用政治干预司法感到尴尬。
+
+        目前孟晚舟引渡案进行到庭审阶段，洛克认为可能要到2024年法官才会对该案作出裁决。最新消息称，孟晚舟引渡案的相关日程已经排到了2021年4月份。下一次出庭可能会在8月份。
+
+        两天前，特鲁多就以“加政府无法干预司法系统”、“司法独立”为由，称绝对不会用释放孟晚舟来作为交换两名加拿大人的筹码。我外交部发言人赵立坚对此回击说，加方在所谓司法独立问题上奉行的完全是双重标准。孟晚舟事件是一起严重的政治事件，美方的目的是为了打压中国高技术企业和华为公司，而加拿大则扮演了美方帮凶的角色。
+    </p>
+    <p>6月22日，加拿大前司法部长艾伦·洛克在接受加主流媒体《环球邮报》采访时表示，加拿大政府现在完全有合法权力释放孟晚舟，但特鲁多不愿这么做，只因他仍对去年“SNC兰万灵贪腐案”中被揭露用政治干预司法感到尴尬。
+
+        目前孟晚舟引渡案进行到庭审阶段，洛克认为可能要到2024年法官才会对该案作出裁决。最新消息称，孟晚舟引渡案的相关日程已经排到了2021年4月份。下一次出庭可能会在8月份。
+
+        两天前，特鲁多就以“加政府无法干预司法系统”、“司法独立”为由，称绝对不会用释放孟晚舟来作为交换两名加拿大人的筹码。我外交部发言人赵立坚对此回击说，加方在所谓司法独立问题上奉行的完全是双重标准。孟晚舟事件是一起严重的政治事件，美方的目的是为了打压中国高技术企业和华为公司，而加拿大则扮演了美方帮凶的角色。
+    </p>
+    <p>6月22日，加拿大前司法部长艾伦·洛克在接受加主流媒体《环球邮报》采访时表示，加拿大政府现在完全有合法权力释放孟晚舟，但特鲁多不愿这么做，只因他仍对去年“SNC兰万灵贪腐案”中被揭露用政治干预司法感到尴尬。
+
+        目前孟晚舟引渡案进行到庭审阶段，洛克认为可能要到2024年法官才会对该案作出裁决。最新消息称，孟晚舟引渡案的相关日程已经排到了2021年4月份。下一次出庭可能会在8月份。
+
+        两天前，特鲁多就以“加政府无法干预司法系统”、“司法独立”为由，称绝对不会用释放孟晚舟来作为交换两名加拿大人的筹码。我外交部发言人赵立坚对此回击说，加方在所谓司法独立问题上奉行的完全是双重标准。孟晚舟事件是一起严重的政治事件，美方的目的是为了打压中国高技术企业和华为公司，而加拿大则扮演了美方帮凶的角色。
+    </p>
+    <a href="#" id="bottom">回到顶部</a>
+    <!--这个id是自己命名的-->
+</body>
+
+</html>

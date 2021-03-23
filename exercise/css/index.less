@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 100vw/750 * 40;
+    background-color: #eff0f4;
+}
+
+.w{
+    width: 694/40rem;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.top-bar:extend(.w){
+    height: 175/40rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // font-size: 30/40rem;
+    // font-size到底应该往哪里设置？？？？？？？？？？？？
+    .logo{
+        padding-bottom: 19/40rem;
+    }
+    a{
+        color: #24253d;
+        font-size: 50/40rem;
+        font-weight: lighter;
+        i{
+            color: #999999;
+            font-size: 40/40rem;
+        }
+    }
+}
+
+.banner:extend(.w){
+    img{
+        width: 100%;
+        vertical-align: bottom;
+    }
+}
+
+.menu:extend(.w){
+    height: 330/40rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    a{
+        width: 327/40rem;
+        height: 104/40rem;
+        line-height: 104/40rem;
+        color: white;
+        font-size: 30.5/40rem;
+        border-radius: 10/40rem;
+        i{
+            padding: 0 20/40rem 0 38/40rem;
+        }
+    }
+    &>a:first-child{
+        background-color: #f87258;
+    }
+    &>a:nth-child(2){
+        background-color: #c75bff;
+    }
+    &>a:nth-child(3){
+        background-color: #ff3a72;
+    }
+    &>a:nth-child(4){
+        background-color: #1d92ff;
+    }
+}
+
+.course-list:extend(.w){
+    height: 397/40rem;
+    margin-bottom: 43/40rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    .title{
+        font-size: 33/40rem;
+        display: flex;
+        justify-content: space-between;
+        // padding-left: 20/40rem;
+        // border-left: 3/40rem solid #3a84ff;
+
+        .course-cate{
+            color: #24253d;
+            .line{
+                width: 3/40rem;
+                height: 30/40rem;
+                background-color: #3a84ff;
+                display: inline-block;
+                vertical-align: -2/40rem;
+                margin-right: 20/40rem;
+            }
+        }
+        a{
+            font-size: 28.4/40rem;
+            color: #6e6e6f;
+        }
+    }
+    .item-list{
+        overflow: scroll;
+        display: flex;
+        width: 722/40rem;
+        .item{
+            // flex: 0 1 auto;
+            width: 330/40rem;
+            height: 324/40rem;
+            box-shadow: 0 0 8/40rem rgba(0, 0, 0, .2);
+            margin-right: 24/40rem;
+            text-align: center;
+            background-color: white;
+            border-radius: 20/40rem;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-evenly;
+            .cover{
+                width: 287/40rem;
+                padding: 0 21.5/40rem;
+                img{
+                    width: 100%;
+                    vertical-align: bottom;
+                }
+            }
+            .course-name{
+                font-size: 32.3/40rem;
+                font-weight: lighter;
+                color: #24253d;
+            }
+            .user-info{
+                display: flex;
+                align-items: center;
+                font-size: 24.8/40rem;
+                color: #969494;
+                img{
+                    width: 42/40rem;
+                    margin: 0 20/40rem;
+                }
+            }
+        }
+    }
+}
+

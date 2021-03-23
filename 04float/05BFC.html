@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            /* background-color: orangered; */
+            border: blue 20px solid;
+            /* overflow: hidden; */
+            float: left;
+        }
+/* overflow更不要脸一些，喜欢去和float肩并肩 */
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orchid;
+            overflow: hidden;
+            /* float: left; */
+        }
+        .box3{
+            height: 200px;
+            width: 250px;
+            background-color: palegreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

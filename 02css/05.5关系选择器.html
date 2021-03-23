@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系选择器</title>
+
+    <style>
+        div span{
+            color: red;
+        }
+        span.s1~i{
+            color: orchid;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        我是第一个最外边的div
+        <p>
+            我是第一个最外边的div的子元素
+           <span>我是前边p元素内的span</span>
+        </p>
+        <span class="s1">我是div中的直接span1</span>
+        <i>我是I</i>
+        <span>我是div中的直接span2</span>
+        <span class="s2"> 我是div中的直接span3</span>
+    </div>
+
+    <div class="di">
+        我是第二个最外围的div
+        <p>
+            我是第二个最外边的div的子元素
+        </p>
+    </div>
+</body>
+</html>

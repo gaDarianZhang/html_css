@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格的样式</title>
+    <style>
+        table{
+            /* table是一个特殊的块元素，
+            不设置width的时候，不会自动最宽，也就是默认不是auto了吧 */
+            width: 50%;
+            border: 1px solid black;/*只有最外围的边框*/
+            margin: 0 auto;
+            /*设置边框间的距离，间距为0，但是两个边框加起来是2，并不会合并为一个边框*/
+             border-spacing: 20px 10px;
+            /* border-collapse设置边框的合并
+                collapse
+                separate
+            */
+            /*border-collapse: collapse;*/
+             border-collapse: separate;
+            
+        }
+
+        td{
+            /* 给内部单元格设置了外围边框 */
+            border: 1px solid red;
+            /* 默认情况下元素在td中是垂直居中的 可以通过 vertical-align 来修改*/
+            height: 100px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        /* 
+            ！！！！！！！！！！！如果表格中没有使用tbody而是直接使用tr，
+                那么浏览器会自动创建一个tbody，并且将tr全都放到tbody中
+                所以，tr不是table的子元素，而是tbody的！！！！！！！！！！！！！！！！！
+         */
+         tbody > tr:nth-child(odd){
+            background-color: #bfa;
+        }
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+
+            /* 将元素设置为单元格 td ，更像是inline-block，可以使用vertical-align，
+                块元素就不能使用这个 */
+            /*
+            ！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+            The vertical-align CSS property sets vertical alignment of an 
+            inline, inline-block or table-cell box.
+            */
+            display: table-cell;
+            vertical-align: middle;
+
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin: 0 auto;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <table>
+        <tr>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>地址</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>孙悟空</td>
+            <td>男</td>
+            <td>18</td>
+            <td>花果山</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>28</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>沙和尚</td>
+            <td>男</td>
+            <td>38</td>
+            <td>流沙河</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>唐僧</td>
+            <td>男</td>
+            <td>16</td>
+            <td>女儿国</td>
+        </tr>
+        <tr>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>地址</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>孙悟空</td>
+            <td>男</td>
+            <td>18</td>
+            <td>花果山</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>28</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>沙和尚</td>
+            <td>男</td>
+            <td>38</td>
+            <td>流沙河</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>唐僧</td>
+            <td>男</td>
+            <td>16</td>
+            <td>女儿国</td>
+        </tr>
+    </table>
+</body>
+</html>

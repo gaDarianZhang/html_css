@@ -1,0 +1,601 @@
+/* 主页index.html样式 */
+
+/* 顶部导航条容器 */
+.top-bar-wrapper{
+    width: 100%;
+    height: 40px;/*这一句不要也行*/
+    /*!!!!!!!!!!!!!!!!!!！！！！！！！！！！！！ 
+    它内部元素的行高是这么多，！！!!!后代元素块元素
+    ！！!!不设置高度的话，默认就是这个高度。
+    行内元素也会居中，但是高度是内容撑开的高度 */
+    line-height: 40px;
+    background-color: #333;
+}
+
+/* 设置超链接字体 */
+.top-bar a{
+    color: #b0b0b0;
+    font-size: 12px;
+    display: block;
+}
+
+.service a:hover,
+.user-use a:hover{
+    color: white;
+}
+/* 设置中间分隔竖线 */
+.top-bar .line{
+    color: #424242;
+    font-size: 14px;
+    padding: 0 8px;
+    /* !!!!!!重要操作！！！！！！ */
+    margin-top: -1px;
+}
+
+/* 设置浮动 */
+/* top-bar里边的元素都浮动了，高度塌陷 */
+.service,
+.service li,
+.user-use li{
+    float: left;
+}
+
+.shopping-car,
+.user-use{
+    float: right;
+}
+.app{
+    position: relative;
+}
+
+/* 设置下载app弹出框 */
+.service .app .qrcode{
+    position: absolute;
+    width: 124px;
+    background-color: white;
+    line-height: 1;/*因为前边设置了line-hight，这里会继承，把字体给挤出去了*/
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    color: #929292;
+    /* 
+        !!!!!!!!很重要，偶尔发现的！！！！！！！！！
+        ！！！！！！！！！！！！！！！！！！！！！！
+        ！！！！！！！！！！！！！！！！！！！！！
+        因为使用top=xxpx，当把height设为0的时候，是底部的边bottom折叠到top这一边，
+        假设height=0时，top和bottom合并为1条线：top线，那么这条线就距参考线的顶部41px。
+        溢出的qrcode就紧接在这条线的下边。当使用transition时，从top慢慢向下展开，也就是
+        从qrcode顶部向下慢慢出现。qrcode就自上而下慢慢出现。
+        当使用bottom=xxpx时，就是这个box的底部bottom距参考线的底部是149px,然后box的top
+        折叠到bottom，然后溢出box的qrcode就接在bottom下边。而使用transition时，则是从bottom
+        慢慢向上（top）伸展开。而此时，qrcode确实整个都在bottom下边，所以qrcode的顶部要从box的底部
+        慢慢向上滑动。
+        所以，以后想要从某个方向慢慢弹出的话，就要正确使用top,bottom,right,left。
+        在height缓慢展开的过程中，其他部分都属于溢出部分。
+    */
+    top: 41px;
+    font-size: 14px;
+    left: -40px;
+    /* display: none; */
+   
+    /* ！！！！！！！！！！！
+        新玩法。
+    !!!!!!!!!!!!!!!!!!
+    */
+    height: 0;
+    overflow: hidden;
+    transition: height .3s;
+    z-index: 9999;
+}
+/* !!!!!!设置app下的小三角!!!!! */
+.app::before{/*包含在qrcode类里边*/
+    content: '';
+    position: absolute;
+    display: none;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom-color: white;
+    border-top: none;
+    bottom: -1px;
+    
+    /* !!!!!下边这三个不太明白!!!!! */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    
+}
+
+/* 设置二维码图片 */
+.qrcode img{
+    width: 90px;
+    margin: 17px 17px 13px;
+}
+
+.app:hover .qrcode{
+    /* display: block; */
+    height: 148px;
+}
+
+.app:hover::before{
+    display: block;
+}
+
+/* 设置user-use和购物车间的距离 */
+.user-use{
+    margin-right: 25px;
+}
+
+.shopping-car{
+    position: relative;
+}
+
+/* 设置购物车 */
+/* shopping-button换成a也可以 */
+.shopping-car a{
+    background-color: #424242;
+    width: 120px;
+    text-align: center;
+}
+/* 设置购物车图标 */
+.shopping-car i{
+    font-size: 14px;
+    /* margin-top: 5px; 行内元素，上下没有效果 */
+    margin-right: 2px;
+}
+
+/* 用于遮盖shopping-content的阴影 */
+.shopping-car .shopping-button{
+    position: relative;
+    z-index: 9999;
+}
+
+/* 设置购物车的弹出框 */
+/*简单粗暴 .shopping-car .shopping-content{
+    width: 316px;
+    height: 100px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, .3);
+    position: absolute;
+    right: 0;
+    text-align: center;
+    line-height: 100px;
+    display: none;
+    index-z: 9999;
+} */
+.shopping-car .shopping-content{
+    width: 316px;
+    height: 0;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, .3);
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    overflow: hidden;
+    transition: height .3s;
+    text-align: center;
+    background-color: white;
+    
+}
+/* 设置shopping-content内的字体 */
+.shopping-content span{
+    line-height: 100px;
+    color: #797979;
+}
+
+/* 设置shopping hover */
+/* 这里的a换成shopping-button就不能改变字体颜色了 */
+.shopping-car:hover a{
+    color: #FF6E0C;
+    background-color: white;
+}
+/*简单粗暴 .shopping-car:hover .shopping-content{
+    display: block;
+} */
+.shopping-car:hover .shopping-content{
+    height: 100px;
+
+}
+
+/* 头部导航条 */
+.header-wrapper{
+    width: 100%;
+    /* background-color: royalblue; */
+    position: relative;
+}
+
+.header{
+    height: 100px;
+    /* background-color: red; */
+}
+
+.header .logo{
+    float: left;
+    width: 55px;
+    height: 55px;
+    margin-top: 22px;
+    /* background-color: yellow; */
+    position: relative;
+    overflow: hidden;
+    /* ！！！！！！隐藏logo中的文字！！！！！！
+    ！！！！！！！设置首行缩进！！！！！！！！
+    向左缩的很远，就看不到了 */
+    text-indent: -9999px;
+}
+
+/* 同时设置了logo-home和logo-mi，但这些并不同时适用于两个
+所以紧接着再改一下logo-home */
+.header .logo a{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background-color: #ff6700;
+    background-image: url('../img/mi-logo.png');
+    background-position: center center;
+    left: 0;
+    transition: left .3s;
+}
+.header .logo .logo-home{
+    background-image: url('../img/mi-home.png');
+    left: -55px;
+}
+.header .logo:hover .logo-mi{
+    left: 55px;
+}
+.header .logo:hover .logo-home{
+    left: 0;
+}
+
+/* 设置头部导航条的中间列表 */
+.header .nav{
+    float: left;
+    /* height: 100px; */
+    /* background-color: #bfa; */
+    margin-left: 7px;
+    padding-top: 12px;
+    padding-left: 30px;
+    
+}
+
+.header .nav li{
+    float: left;
+    padding-bottom:38px;
+}
+
+.header .nav a{
+    display: block;
+    color: #333333;
+    font-size: 16px;    
+    height: 24px;
+    padding: 26px 10px 0;
+    line-height: 24px;
+}
+/* 隐藏“全部商品分类” */
+.header .all-goods{
+    visibility: hidden;
+}
+/* 改变字体颜色 */
+.header li:not(.all-goods):hover a{
+    color: salmon;
+}
+/* 设置goods-show */
+.header .nav .goods-show{
+    /*！！！！！！！！！相对于header-wrapper定位，宽度也是相对于它*/
+    position: absolute;
+    /* height: 229px; */
+    height: 0;
+    width: 100%;
+    /* background-color: seagreen; */
+    top: 100px;
+    left: 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+    /* overflow hidden 也只是hidden content里边装的内容*/
+    overflow: hidden;
+    transition: height .3s;
+    background-color: white;
+    z-index: 999;
+    
+}
+
+.header .nav li:not(.no):hover~.goods-show,
+.header .nav>.goods-show:hover{
+    border-top: 1px solid #E0E0E0;
+    height: 229px;
+    /* 这样子就看不到这个框慢慢收回的过程了，因为鼠标移出去后这个border-top就没有了 */
+}
+
+/* 设置顶部搜索框 */
+.search-wrapper{
+    float: right;
+    width: 296px;
+    height: 50px;
+    /* background-color: red; */
+    margin-top: 25px;
+}
+
+.header .search-wrapper .search-inp{
+    float: left;
+    width: 233px;
+    height: 48px;
+    padding: 0 5px;
+    border: 1px solid #E0E0E0;
+    border-right: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.header .search-wrapper .search-but{
+    float: left;
+    width: 52px;
+    height: 50px;
+    padding: 0;
+    border: 1px solid #E0E0E0;
+    background-color: white;
+    font-size: 18px;
+    color: #616161;
+    outline: none;
+}
+/* search框变色 */
+.header .search-wrapper .search:hover>*{
+    border-color: #B0B0B0;
+
+}
+/* 移入文本框变border */
+.header .search-wrapper .search-inp:focus,
+.header .search-wrapper .search-inp:focus+.search-but{
+    border-color: #FF6700;
+}
+/* 移入按钮变色 */
+.header .search-wrapper .search-but:hover{
+    background-color: #FF6700;
+    border-color: #FF6700;
+    color: white;
+}
+
+.aside-img-wrapper{
+    height: 460px;
+    position: relative;/*没有脱离文档流*/
+}
+/* 左侧列表 */
+.aside-img-wrapper .aside{
+    float: left;
+    width: 234px;
+    height: 420px;
+    background-color: #9A9999;
+    padding: 20px 0;
+}
+/* 设置内部背景字体等 */
+.aside-img-wrapper .aside a{
+    display: block;
+    padding-left: 30px;
+    line-height: 42px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;;
+    color: white;
+}
+/* 设置箭头 */
+.aside-img-wrapper .aside a>i{
+    /* display: block; */
+    float: right;
+    padding: 14px 24px 0 0;
+    line-height: 14px;
+}
+
+/* 设置左侧列表鼠标移入效果 */
+.aside-img-wrapper .aside a:hover{
+    background-color: #FF6700;
+}
+
+/* 设置列表右侧的轮播图 */
+.aside-img-wrapper .img-wrapper{
+    width: 992px;
+    height: 460px;
+    float: left;
+    background-color: tomato;
+    position: relative;
+}
+.aside-img-wrapper .img-wrapper li{
+    position: absolute;
+    overflow: hidden;/*图片太大*/
+    width: 100%;
+    height: 100%;
+}
+.aside-img-wrapper .img-wrapper li img{
+    height: 100%;
+    position: absolute;
+    right: 0;/*让图片右边贴边*/
+}
+
+/* 设置轮播图右下角的按钮 */
+.aside-img-wrapper .turn-button{
+    position: absolute;
+    bottom: 26px;
+    right: 34px;
+}
+/* 圆按钮不安的时候 */
+.aside-img-wrapper .turn-button a{
+    /* display: block; */
+    float: right;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, .3);
+    margin-left: 8px;
+    border-radius: 50%;
+    border: 2px solid rgba(255 , 255, 255, .3);
+}
+/* 圆按钮点击时 */
+.aside-img-wrapper .turn-button a:hover{
+    border-color: rgba(0, 0, 0, .3);
+    background-color: rgba(255 , 255, 255, .3);
+}
+
+/* 图片两侧的左右按钮 */
+.aside-img-wrapper .pre-next a{
+    width: 41px;
+    height: 69px;
+    background-image: url(../img/icon-slides.png);
+    position: absolute;
+    /* 用于垂直居中 */
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.aside-img-wrapper .pre-next>.pre{
+    left: 234px;
+    background-position: -84px 0;
+}
+.aside-img-wrapper .pre-next>.pre:hover{
+    background-position: 0 0;
+}
+.aside-img-wrapper .pre-next>.next{
+    right: 0;
+    background-position: -125px 0;
+}
+.aside-img-wrapper .pre-next>.next:hover{
+
+    background-position: -43px 0;
+}
+
+/* 设置右侧fixed小框 */
+.backtop{
+    height: 200px;
+    width: 36px;
+    background-color: salmon;
+    position: fixed;
+    bottom: 150px;
+    /*整个窗口的50%，也就是到中间了*/
+    /* right: 50%;
+    margin-right:-649px; */
+    /* 上下这两种都行 */
+    left: 50%;
+    margin-left: 613px;
+    /* 
+        分析一下：
+        第一种情况：停靠在右边：（right=50%,负margin-right;left=50%,正的margin-left）
+            1.right=50%，left则为auto，需要再向右边移动
+                如果设置margin-left，为正值，则auto减小，则不会移动；
+                    为负值，则是向左移动，auto又给补上了，给怼回来了，还是没动。
+                如果设置margin-right，则应该设置为负值，则向右移动，缺的值auto给补上了，成功！！！
+            2.left=50%，right则为auto，需要再向右边移动
+                如果设置margin-left,为正值，则向右移动，auto减小。成功！！！
+                    为负值，则是又向
+        第二种情况：停靠在左边(right=50%,正的margin-right;left=50%，负的margin-left)
+
+    */
+    /* 
+        布局的等式
+        left和right不能同时设置
+            left + margin-left + width + margin-right + right = 视口的宽度
+
+            auto + 0 + 36 + 0 + 60 = 视口宽度
+
+            auto + 0 + 36 + -639px + 50% = 视口宽度
+    */
+}
+
+/* 设置底部广告 */
+.ad{
+    height: 170px;
+    margin-top: 14px;
+    /* background-color: red; */
+}
+
+.ad ul,
+.ad li{
+    float: left;
+}
+
+.ad .grid{
+    height: 168px;
+    width: 228px;
+    background-color: #5F5750;
+    padding-top: 2px;
+    padding-left: 6px;
+}
+
+.ad .grid a{
+    display: block;
+    height: 84px;
+    width: 76px;
+    text-align: center;
+    color: #C9C6C4;
+    font-size: 12px;
+    /* i的margin传递给了a，但给a一个个加上clearfix太麻烦
+        就使用overflow:hidden 来开启BFC */
+    overflow: hidden;
+    position: relative;
+}
+
+.ad .grid i{
+    display: block;
+    font-size: 20px;
+    margin: 20px 0 5px;
+
+}
+/* hover变色 */
+.ad .grid a:hover{
+    color: white;
+}
+
+/* 设置边框线 */
+.ad .grid a::before{
+    content: '';
+    width: 64px;
+    height: 1px;
+    background-color: #665E57;
+    /* background-color: red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.ad .grid a::after{
+    content: '';
+    width: 1px;
+    height: 70px;
+    background-color: #665E57;
+    /* background-color: red; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+
+}
+
+/* 设置图片 */
+.ad .ad-pic li{
+    margin-left: 15px;
+    width: 316px;
+    height: 100%;
+}
+.ad .ad-pic li:first-child{
+    margin-left: 14px;
+}
+
+.ad .ad-pic img{
+    width: 100%;
+    vertical-align: top;
+}
+
+.ad .ad-pic li:hover{
+    box-shadow: 0 8px 8px rgba(0, 0, 0, .1);
+}
+
+/* 给最后张图片设置hover上浮效果
+以下三部分都是 */
+.ad .ad-pic{
+    position: relative;
+    /* 前边没有设置.ad-pic的宽度，是靠内容撑起来的 */
+    width: 992px;
+}
+
+.ad .ad-pic li:last-of-type{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: top .3s;
+}
+.ad .ad-pic li:last-of-type:hover{
+    top: -4px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, .2);
+}

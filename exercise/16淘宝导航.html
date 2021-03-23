@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝导航</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        /* .clearfix::before,
+        .clearfix::after{
+            display: table;
+            content: '';
+            clear: both;
+        } */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            width: 100%;
+            margin: 50px auto;
+        }
+        .nav-inner{
+            /* 没有设置宽度，默认撑满父元素 */
+            display: flex;
+            text-align: center;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .nav-inner a{
+            display: block;
+            /* 设置18%的目的：注意，设置了img大小为block a的100%
+                    -18%是配合display:flex以及justify-content的。
+                    -设置了flex，弹性元素默认会随着弹性盒压缩，所以当页面变窄，
+                        小于5张图片原始大小之和的时候，block a会被自动压缩变小;
+                        而当页面变宽时，页面宽度超过5张图片原始大小时，图片不会自动变大，
+                        则页面右边留下空白。
+                    -如果设置了flex-grow=1，五张图片会填满页面，页面变宽图片也变大，五张图片
+                        所在的block a之间没有间隙，不好看。我们下边的目的就是设置一个合适的间隙。
+                    -设置了18%后，页面变宽，block a也变大，是页面的18%。那么五张图片占了90%,还有10%
+                        就留在了最右边是空白了。通过justify-content把这些空白就分到了五张图片中间，
+                        间隔就变大了。
+            */
+            width: 18%;
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+            /* flex:0 0 auto; */
+        }
+        .nav-inner a img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 为什么在页面中span的内容就在图片下方了呢，？？？？？？？？？？？
+            参考该文件夹内的test-img-in-a.html内容
+    -->
+    <nav class="nav clearfix">
+        <div class="nav-inner">
+            <a href="#">
+                <img src="./img/16/1.png" alt="">
+                <span>天猫</span>
+            </a>
+            <a href="#">
+                <img src="./img/16/2.png" alt="">
+                <span>聚划算</span>
+            </a>
+            <a href="#">
+                <img src="./img/16/3.png" alt="">
+                <span>天猫国际</span>
+            </a>
+            <a href="#">
+                <img src="./img/16/4.png" alt="">
+                <span>外卖</span>
+            </a>
+            <a href="#">
+                <img src="./img/16/5.png" alt="">
+                <span>天猫超市</span>
+            </a>
+        </div>
+        <div class="nav-inner">
+            <a href="#">
+                <img src="./img/16/6.png" alt="">
+                <span>充值中心</span>
+            </a>
+            <a href="#">
+                <img src="./img/16/7.png" alt="">
+                <span>飞猪旅行</span>
+            </a>
+            <a href="#">
+                <img src="./img/16/8.png" alt="">
+                <span>领金币</span>
+            </a>
+            <a href="#">
+                <img src="./img/16/9.png" alt="">
+                <span>拍卖</span>
+            </a>
+            <a href="#">
+                <img src="./img/16/10.png" alt="">
+                <span>分类</span>
+            </a>
+        </div>
+    </nav>
+</body>
+</html>

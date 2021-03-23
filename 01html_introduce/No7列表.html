@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表</title>
+
+</head>
+<body>
+    <!--
+        列表（list）
+            在html中也可以创建列表，html中列表共有三种：
+            1、有序列表
+            2、无序列表
+            3、定义列表
+        
+        1、有序列表：使用ol来创建有序列表,使用li来表示列表项
+        2、无序列表：使用ul来创建无序列表,使用li来表示列表项
+            （其实在开发中，会把有序无序列标前的标号或标识符都去掉，
+            所以在开发中有序无序列表往往没有什么区别）
+        3、定义列表：使用dl标签来创建一个定义列表。使用dt来表示定义的内容，dd来对内容进行解释说明
+
+        列表之间可以互相嵌套
+    -->
+
+    <ul>
+        <li>结构（html）</li>
+        <li>表现（css）</li>
+        <li>行为（javascript）</li>
+    </ul>
+    <ol>
+        <li>结构</li>
+        <li>表现</li>
+        <li>行为</li>
+    </ol>
+
+    <dl>
+        <dt>结构</dt>
+        <dd>结构表示表示网页的结构，用来规定网页中哪里是标题，哪里是段落</dd>
+        <dd>结构表示表示网页的结构，用来规定网页中哪里是标题，哪里是段落</dd>
+        <dt>表现</dt>
+        <dt>行为</dt>
+    </dl>
+
+    <ul>
+        <li>
+            a
+            <ul>
+                <li>a1</li>
+                <li>a2</li>
+            </ul>
+        </li>
+        <li>
+            b
+        </li>
+    </ul>
+</body>
+</html>

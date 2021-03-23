@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒的样式</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul{
+            width: 600px;
+            height: 800px;
+            border: 10px solid red;
+            /* 设置ul为弹性容器 */
+            display: flex;
+            /* 若内部子块元素没有设置高度，高度默认会撑满，其实是align-items默认值为stretch（拉伸）
+                也就是弹性元素的高度和弹性容器的高度一样 */
+            /* 
+                flex-wrap:
+                    设置弹性元素是否在弹性容器(容器宽度不够时)中自动换行
+                    可选值：
+                        nowrap 默认值，元素不会自动换行
+                        wrap 元素沿着辅轴方向自动换行
+                        wrap-reverse 元素沿着辅轴反方向换行
+                        副轴方向是自上向下，或者自左向右
+            */
+            /* flex-direction: row-reverse;
+            flex-wrap: wrap; */
+            /* flex-flow:  wrap 和 direction 的简写属性 */
+            /*flex-flow: row wrap;*/
+
+            /*  
+                justify-content(每一行主轴独立，主轴对齐方式)！！！！！！！！！！！！！！！！！！！！！！！！！
+                    - 如何分配!!主轴!!上的空白空间（主轴上的元素如何排列）
+                    - 可选值：
+                        flex-start 元素沿着主轴起边排列，不同于flex-direction,
+                            如flex-direction:row-reverse,紧贴右边且最右边是1；
+                            justify-content:flex-end也是紧贴右边，但是是最后一个元素紧贴右边。
+                        flex-end 元素沿着主轴终边排列
+                        center 元素居中排列,空白均匀分不到两端
+                        space-around 空白分布到元素两侧，也就是空白有2n份
+                        space-between 空白均匀分布到元素间，空白分成n-1份
+                        space-evenly 空白分布到元素的单侧，空白分成n+1份
+
+            */
+            /* justify-content: space-evenly; */
+
+            /*
+            align-items: ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+                - 元素在辅轴上如何对齐(每一行主轴独立，就是每一行主轴上的元素在副轴上的对齐方式）
+                - 元素间的关系
+                    - 可选值：
+                        stretch 默认值，将元素的长度设置为相同的值（主轴上的元素高度相同）
+                        flex-start 元素不会拉伸，沿着辅轴起边对齐
+                        flex-end 元素不会拉伸，沿着辅轴的终边对齐
+                        center 元素不会拉伸，居中对齐
+                        baseline 元素不会拉伸，基线对齐
+             */
+
+             /* justify-content: center; */
+            align-items: center;
+
+             /* align-content: （每一列副轴上元素的对齐方式，）！！！！！！！！！！！！！！！！！！！！！！！
+                    辅轴空白空间的分布,每一行主轴上的一行元素以最长的那个为准 */
+            /*align-content: space-evenly;*/
+            align-content: flex-start;
+        }
+
+        li{
+            width: 200px;
+            /* height: 100px; */
+            text-align: center;
+            font-size: 30px;
+            line-height: 100px;
+            flex-shrink: 0;
+        }
+        li:nth-child(1){
+            background-color: royalblue;
+            /* align-self: 用来覆盖当前弹性元素上的align-items */
+            /*align-self: stretch;*/
+        }
+        li:nth-child(2){
+            background-color: saddlebrown;
+ 
+        }
+        li:nth-child(3){
+            background-color: springgreen;
+
+        }
+        li:nth-child(4){
+            background-color: yellow;
+
+        }
+        li:nth-child(5){
+            background-color: chocolate;
+
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2
+            <div>2</div>
+        </li>
+        <li>3
+            <div>3</div>
+            <div>3</div>
+        </li>
+
+        <li>1</li>
+        <li>2
+            <div>2</div>
+        </li>
+
+    </ul>
+</body>
+</html>

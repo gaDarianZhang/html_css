@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+   
+</head>
+<body>
+    <table border="1" width="50%" align="center">
+        <!-- 在table中使用tr表示表格中的一行，有几个tr就有几行 -->
+        <tr>
+            <!-- 在tr中使用td表示一个单元格，有几个td就有几个单元格 -->
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <!-- rowspan 纵向的合并单元格 -->
+            <td rowspan="2">4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <!-- <td>8</td> -->
+        </tr>
+        <tr>
+            <!-- colspan 横向的合并单元格 -->
+            <td>9</td>
+            <!-- <td>10</td> -->
+            <td colspan="3">11</td>
+            <!-- <td>12</td> -->
+        </tr>
+    </table>
+
+    <table border="1" align="center" width="800px">
+        <thead>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td colspan="2">3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ni</td>
+                <td>shi</td>
+                <td>shui</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

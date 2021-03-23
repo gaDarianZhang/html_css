@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  //color: inherit;
+}
+ul,li{
+  list-style: none;
+}
+img{
+  display: block;
+}
+input{
+  outline: none;
+}
+html{
+  font-size: 100vw/750*40;
+  background-color: #eff0f4;
+}
+.w{
+  width: 694/40rem;
+  margin: 0 auto;
+}
+.header:extend(.w){
+  height: 175/40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header-left,.header-right{
+    font-size: 40/40rem;
+    a{
+      color: #999999;
+    }
+  }
+  .header-title{
+    font-size: 50/40rem;
+    margin-top: 2/40rem;
+    a{
+      color: #24253d;
+    }
+  }
+}
+
+.banner:extend(.w){
+  img{
+    width: 100%;
+  }
+}
+
+.menu:extend(.w){
+  height: 330/40rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-evenly;
+  a{
+    display: block;
+    width: 327/40rem;
+    height: 104/40rem;
+    line-height: 104/40rem;
+    border-radius: 20/40rem;
+    //background-color: #1d92ff;
+    color: #ffffff;
+    font-size: 30/40rem;
+    i{
+      margin-left: 40/40rem;
+      margin-right: 30/40rem;
+      font-size: 35/40rem;
+    }
+  }
+  &>div:first-of-type a{
+    background-color: #f97155;
+  }
+  &>div:nth-of-type(2) a{
+    background-color: #ce71fe;
+  }
+  &>div:nth-of-type(3) a{
+    background-color: #ff3971;
+  }
+  &>div:nth-of-type(4) a{
+    background-color: #1cb1fd;
+  }
+}
+
+.course-list:extend(.w){
+  height: 393/40rem;
+  margin-bottom: 47/40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .course-list-title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .course-list-title-left{
+      font-size: 33/40rem;
+      line-height: 42/40rem;
+      .course-list-title-line{
+        display: inline-block;
+        width: 3/40rem;
+        height: 28/40rem;
+        background-color: #3a84ff;
+        margin-right: 16/40rem;
+      }
+    }
+    .course-list-title-right{
+      color: #656565;
+      font-size: 28/40rem;
+      a{
+        color: inherit;
+      }
+    }
+  }
+
+  .course-wrapper{
+    height: 323/40rem;
+    width: 722/40rem;
+    display: flex;
+    overflow: scroll;
+    .course-item{
+      flex: none;
+      width: 327/40rem;
+      height: 100%;
+      background-color: #ffffff;
+      border-radius: 20/40rem;
+      margin-right: 24/40rem;
+      .course-picture{
+        margin: 20/40rem 23/40rem;
+        img{
+          width: 100%;
+        }
+      }
+      .course-name{
+        font-size: 28/40rem;
+        padding-bottom: 16/40rem;
+        padding-left: 18/40rem;
+        color: #24253d;
+      }
+      .teacher-info{
+        display: flex;
+        align-items: center;
+        height: 42/40rem;
+        font-size: 20/40rem;
+        color: #969494;
+
+        img{
+          height: 42/40rem;
+          margin: 0 15/40rem 0 18/40rem;
+        }
+      }
+    }
+  }
+
+
+}
+

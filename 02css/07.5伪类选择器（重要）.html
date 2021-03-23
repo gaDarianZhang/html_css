@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+
+    <style>
+        
+        /* ul>:not(:nth-child(5)){
+            color: red;
+        } */
+        /* :first-child 同一级别内的第一个子元素（不管是什么类型的元素），把所有类型的元素都当做子元素
+            如果:first-child前边跟了一个明确的元素类型的话，那就是同一级别中该类元素中的第一个了,就相当于first-of-type
+            eg:
+                span:first-child 那就是指同一级别内第一个span类型，相当于first-of-type，看下边紧接着的两个示例就能证明。
+                ul :first-child ul加空格表示所有后代元素，也就是选中了ul中的所有元素，
+                    这时就选中ul的第一个直接子元素，以及下一级别内的第一个子元素依次继续（也就是同一级别内的第一个子元素，这时的子元素就不区分类别了）
+                ul>:first-child 这时就指的是ul的直接子元素中的第一个元素了，不再继续向下寻求更级别的元素
+        */
+        /*可以注释掉后边所有的内容，然后看看这里加上span和不加span的区别*/
+        ul span:first-child{
+            color: red;
+        }
+        ul>:first-child{
+            font-weight: bolder;
+        }
+
+
+        /* 
+            :first-of-type 同一级别内同类型的第一个子元素
+        */
+        /*我这里前边加个ul是考虑到权重问题，要不然前边测试first-child的权重就更高了*/
+        ul span:first-of-type{
+            color: skyblue;
+        }
+        /* ul中所有层级的，所有种类的第一个元素，不像first-child把所有元素混在一块来选第一个，这是按照元素类别来选的 */
+        ul :first-of-type{
+            font-size: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul class="u1">
+        <li>ul1 li1</li>
+        <li>ul1 li2</li>
+        <li>ul1 li3</li>
+        <li>ul1 li4</li>
+    </ul>
+    <ul class="u1">
+        <span>li前的span
+            <ul>
+                <li>12</li>
+                <li>34</li>
+                <li>56</li>
+            </ul>
+        </span>
+        <li class="l">第一个</li>
+        <li>第二个</li> 
+        <span>我是一个span</span>
+        <li>第三个 <span>li内的span</span> <span>同一个Li内的第二个span</span></li>
+        <li>第四个 <span>Li内的有一个span</span></li>
+        <li>第五个</li>
+    </ul>
+</body>
+</html>

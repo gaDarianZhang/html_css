@@ -1,0 +1,26 @@
+/*
+    css多行注释，会被解析到css文件中
+*/
+.box1 .box2 .box21 {
+  background-color: greenyellow;
+}
+.box1 .box3 {
+  background-color: hotpink;
+}
+.box5 {
+  width: 100px;
+  color: #bfa;
+}
+.box6 {
+  width: 100px;
+  background-image: url('box6/1.png');
+}
+div {
+  width: 150px;
+  height: 100px;
+}
+div {
+  color: #bfa;
+  background-color: #bfa;
+}
+/*# sourceMappingURL=./syntax.css.map */

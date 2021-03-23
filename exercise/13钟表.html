@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟表</title>
+    <style>
+        .clock{
+            width: 400px;
+            height: 400px;
+            border: 10px solid skyblue;
+            border-radius: 50%;
+            margin: 100px auto;
+            position: relative;
+            background-image: url('./img/13/bg.png');
+            background-size: cover;
+        }
+        .clock>div{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .sec-wrapper{
+            height: 85%;
+            width: 85%;
+            /* background-color: white; */
+            animation: circle 10s steps(60) infinite;
+        }
+        .sec{
+            height: 50%;
+            width: 2px;
+            background-color: red;
+            margin: 0 auto;
+            
+        }
+
+        .min-wrapper{
+            height: 70%;
+            width: 70%;
+            /* background-color: rosybrown; */
+            animation: circle 600s steps(60) infinite;
+        }
+        .min{
+            height: 50%;
+            width: 3px;
+            background-color: orangered;
+            margin: 0 auto;
+            
+        }
+
+        .hour-wrapper{
+            height: 50%;
+            width: 50%;
+            /* background-color: rosybrown; */
+            animation: circle 7200s infinite;
+        }
+        .hour{
+            height: 50%;
+            width: 4px;
+            background-color: green;
+            margin: 0 auto;
+            
+        }
+
+        @keyframes circle {
+            from{
+                transform: rotateZ(0);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <!--！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ 
+            如果让一条线转的话，线是绕着中间转的，不是绕着一个端点转的。
+            所以应该给一条线加上一个Box,然后让box绕着中心转，在box能画一条线，
+            让这条线定位到box中心。然后不给Box背景颜色，box转起来的时候，
+            效果就像是这条线在转
+            ！！！！！！！！！！！！！！！！！！！！！！！！！！！
+        -->
+        <div class="sec-wrapper">
+            <div class="sec"></div>
+        </div>
+        <div class="min-wrapper">
+            <div class="min"></div>
+        </div>
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+    </div>
+</body>
+</html>

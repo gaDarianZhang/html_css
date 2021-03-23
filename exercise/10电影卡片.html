@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影卡片</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./font-awesome/css/all.css">
+    <style>
+        .card-wrapper{
+            width: 240px;
+            margin: 100px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+        .img-wrapper img{
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+        .info{
+            color: #b4b4b4;
+            font-size: 13px;
+            padding: 0 21px;
+            border-bottom: solid 1px #e9e9e9;
+        }
+        /* 设置电影名，向左微凸，以及上下间距 */
+        .info .film-name{
+            color: #717171;
+            font-size: 18px;
+            line-height: 42px;
+            margin: 0 -3px;
+        }
+        /* 设置定位图标大小和位置 */
+        .film-category::before{
+            content: '\f3c5';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900; /*对于fas必不可少*/
+            margin-right: 7px;
+        }
+        /* 设置所属分类字体大小（分类字体这里没有设置上下padding） */
+        .info .film-category{
+            font-size: 14px;
+        }
+        /* 设置行高（行间距），padding上下的空白 */
+        .info .description{
+            line-height: 16px;
+            padding: 20px 0 18px 0;
+            /* text-align: justify; */
+        }
+
+        .other{
+            line-height: 46px;
+            margin: 0 33px 0 16px;
+            color: #dddddd;
+            
+        }
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .other .star{
+            float: left;
+        }
+
+        .other .share{
+            float: right;
+        }
+
+        .other .star>.light{
+            color: #b9cb41;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="card-wrapper">
+        <!-- 图片 -->
+        <div class="img-wrapper">
+            <img src="./img/10/1.jpg" alt="">
+        </div>
+        <!-- 电影描述信息 -->
+        <div class="info">
+            <h2 class="film-name">Animation films</h2>
+            <h3 class="film-category">Movies</h3>
+            <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus mollitia sed, fuga excepturi dignissimos accusantium ad, repellendus facilis est, culpa consequatur pariatur! Accusantium assumenda sequi cumque illo tenetur aspernatur amet.</p>
+        </div>
+
+        <div class="other clearfix">
+            <div class="star">
+                <i class="fas fa-star light"></i>
+                <i class="fas fa-star light"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="share">
+                <i class="fab fa-weixin"></i>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

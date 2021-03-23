@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: #957ca0;
+        }
+
+        .box2{
+            /* 
+                animation-name
+                animation-duration
+                animation-timing-function
+                animation-delay
+                animation-iteration-count
+                animation-direction
+                animation-play-state
+                animation-fill-mode
+            */
+            width: 100px;
+            height: 100px;
+            background-color: #9CDCFE;
+            /* animation-name: 要对当前元素生效的关键帧的名字 */
+            /* animation-duration: 动画的执行时间 */
+            /* 动画的延时 */
+            /*animation-timing-function*/
+            /*
+            animation-iteration-count 动画执行的次数
+                可选值：
+                    次数
+                    infinite 无限执行
+            */
+            /*
+            animation-direction
+                指定动画运行的方向
+                    可选值：
+                    normal 默认值  从 from 向 to运行 每次都是这样
+                    reverse 从 to 向 from 运行 每次都是这样
+                    alternate(来回) 从 from 向 to运行 重复执行动画时反向执行,
+                        次数受animation-iteration-count影响
+                    alternate-reverse 从 to 向 from运行 重复执行动画时反向执行
+
+            */
+            /*
+                animation-play-state: 设置动画的执行状态
+                可选值：
+                    running 默认值 动画执行
+                    paused 动画暂停
+            */
+            
+            /* 
+            animation-fill-mode: 动画的填充模式
+                可选值：
+                    none 默认值 动画执行完毕元素回到原来位置
+                    forwards 动画执行完毕元素会停止在动画结束的位置
+                    backwards 动画延时等待时，元素就会处于开始位置
+                    both 结合了forwards 和 backwards
+            */
+            /* animation-name: name1;
+            animation-duration: 3s;
+            animation-delay: 2s;
+            animation-iteration-count: 5;
+            animation-timing-function: cubic-bezier(.24,.95,.82,-0.88); */
+            /* animation-direction: alternate; */
+            /*animation-fill-mode: forwards;*/
+            /*animation-fill-mode: backwards;*/
+            /* animation-fill-mode: both; */
+            /*animation-play-state: paused;*/
+            animation: name1 3s alternate cubic-bezier(.24,.95,.82,-0.88) 5 3s backwards;
+        }
+
+        .box1:hover .box2{
+            animation-play-state: paused;
+        }
+        /*
+        动画
+            动画和过渡类似，都是可以实现一些动态的效果，
+                不同的是过渡需要在某个属性发生变化时才会触发
+                动画可以自动触发动态效果
+
+            设置动画效果，必须先要设置一个关键帧，关键帧设置了动画执行每一个步骤
+        */
+        @keyframes name1 {
+            /* from表示动画的开始位置 也可以使用 0% */
+            from{
+                margin-left: 100px;
+                background-color: darkorange;
+            }
+            /* to动画的结束位置 也可以使用100%*/
+            to{
+                margin-left: 700px;
+                background-color: blue;
+                /* animation-timing-function: linear; */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+</body>
+</html>

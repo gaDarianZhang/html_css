@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性选择器</title>
+
+    <style>
+        /* 
+            [属性名] 选择含有指定属性的元素
+            [属性名=属性值] 选择属性=指定属性值的元素
+            [属性名^=属性值] 选择属性值以指定值开头的元素
+            [属性名$=属性值] 选择属性值以指定值结尾的元素
+            [属性名*=属性值] 选择属性值中含有某值的元素的元素
+        */
+        [title]{
+            color: seagreen;
+        }/*修改所有包含title的元素*/
+        p[title]{/*交集选择器*/
+            color: red;
+        }
+        p[title=abc]{/*title=abc*/
+            color: yellow;
+        }
+        p[title^=abc]{/*title以abc开头*/
+            color: blue;
+        }
+        p[title$=abc]{/*结尾*/
+            color: blueviolet;
+        }
+        p[title*=abc]{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p title="abc">段落1</p>
+    <p title="abcd">段落2</p>
+    <p title="helloabc">段落3</p>
+    <p>段落4</p>
+    <h1 title="abc">标题1</h1>
+    <h2>标题2</h2>
+</body>
+</html>

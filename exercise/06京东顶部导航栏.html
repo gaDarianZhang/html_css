@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东顶部导航栏</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./font-awesome/css/all.css">
+    <style>
+
+        .top-nav-wrapper{
+            background-color: #E3E4E5;
+            width: 100%;
+            font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+        }
+
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .top-bar{
+            width: 1190px;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #DDDDDD;
+            margin: 0 auto;
+        }
+        
+        .top-bar a:hover,
+        .top-bar a>span:hover,
+        .top-bar .highlight{
+            color: red;
+        }
+
+        .top-bar a,
+        .top-bar span,
+        .top-bar i{
+            text-decoration: none;
+            color: #999999;
+        }
+
+        .location{
+            float: left;
+        }
+        
+        .location a{
+            display: block;
+            padding: 0 8px;
+            border: 1px solid transparent;
+            margin-top: -1px;
+            /* padding的作用是为了刚好能盖住下边city-list的线 */
+            padding-bottom: 1px;
+            /* 开启relative的目的是为了能给a赋予更高的显示层级 */
+            position: relative;
+            z-index: 9999;
+        }
+        /* 设置地图定位图标的大小 */
+        .location a>i{
+            font-size: 13px;
+        }
+
+        .location:hover a{
+            background-color: white;
+            border: 1px solid #CCCCCC;
+            border-bottom: none;
+        }
+
+        .location:hover .city-list{
+            display: block;
+        }
+
+        .city-list{
+            width: 321px;
+            height: 462px;
+            background-color: white;
+            border: 1px solid #CCCCCC;
+            position: absolute;
+            top: 30px;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+        }
+
+        .shortcut{
+            float: right;
+        }
+        .shortcut li{
+            float: left;
+        }
+        .shortcut .line{
+            width: 1px;
+            height: 10px;
+            background-color: #CCCCCC;
+            margin: 12px 7px 8px;
+        }
+
+        .shortcut li:not(.np)
+        {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+
+        .shortcut .fa-angle-down{
+            margin-left: 3.5px;
+        }
+        .client-service{
+            position: relative;
+        }
+
+        .client-service .service-button{
+            padding: 0 7px 1px;
+            border: 1px solid transparent;
+            margin: -1px -1px 0;
+            position: relative;
+            z-index: 9999;
+            
+        }
+
+
+        .client-service .service-content{
+            width: 170px;
+            height: 247px;
+            border: 1px solid #CCCCCC;
+            position: absolute;
+            top: 30px;
+            right: -1px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+            display: none;
+            z-index: 999;
+        }
+
+        .client-service:hover .service-button{
+            background-color: white;
+            border: 1px solid #CCCCCC;
+            border-bottom: none;
+
+        }
+        .client-service:hover .service-content{
+            display: block;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="top-nav-wrapper">
+        <div class="top-bar clearfix">
+            <div class="location">
+                <a href="javascript:;">
+                    <i class="fas fa-map-marker-alt highlight"></i> <!--也可以不用这句，用伪元素::before-->
+                    <span class="current-city">四川</span>
+                </a>
+                <div class="city-list">
+                    
+                </div>
+            </div>
+    
+            <ul class="shortcut">
+                <li>
+                    <a href="javascript:;">你好，请登录</a>
+                    &nbsp;
+                    <a href="javascript:;" class="highlight">免费注册</a>
+                </li>
+
+                <li class="line np"></li>
+                <li><a href="javascript:;">我的订单</a></li>
+
+                <li class="line np"></li>
+                <li>
+                    <a href="javascript:;">
+                        <span>我的京东</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                </li>
+
+                <li class="line np"></li>
+                <li><a href="javascript:;">京东会员</a></li>
+
+                <li class="line np"></li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="highlight">企业采购</span>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    
+                </li>
+
+                <li class="line np"></li>
+                <!-- !!!!!!!!!!!!!!!!!!!! -->
+                <li class="client-service np">    
+                    <div class="service-button">
+                        <span>客户服务</span>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <div class="service-content">
+
+                    </div>
+                </li>
+
+                <li class="line np"></li>
+                <li>
+                        <span>网站导航</span>
+                        <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line np"></li>
+                <li>
+                        <span>手机京东</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

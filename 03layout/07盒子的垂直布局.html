@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子的垂直布局</title>
+
+    <style>
+        .outer{
+            background-color: #bfa;
+            /* 没有设置width，就是为auto */
+            height: 200px;
+            /* 默认情况下父元素的高度被子元素撑开,
+                若写了的话，设置多少就是多少.会溢出。
+                ！！！！！！！！！！！！！！！！！！
+                ！！！！！！！！！！！！！！！！！！溢出后是被其他元素覆盖，不是向下挤（被覆盖）！！！！！！！！！！！！！！！
+                 */
+            /* overflow: auto; */
+
+        }
+
+        .inner{
+            width: 300px;
+            background-color: yellow;
+            height: 100px;
+            margin-bottom: 40px;
+        }
+
+        .box1{
+            margin-top: 20px;
+            background-color: #bfa;
+            width: 200px;
+            height: 200px;
+            /*
+                子元素是在父元素的内容区中排列的,
+                如果子元素的大小超过了父元素，
+                则子元素会从父元素中溢出。 
+                ！！！！！！！！！！！！！！！！！！溢出后是被其他元素覆盖，不是向下挤（被覆盖）！！！！！！！！！！！！！！！
+                -overflow属性:设置父元素如何处理溢出的子元素
+                    可选值：
+                    -visible：默认值，子元素从父元素中溢出部分在父元素外部显示
+                    -hidden：溢出内容会被剪裁不显示
+                    -scroll：生成两个滚动条（水平和垂直）
+                    -auto：根据需要生成水平和垂直方向的滚动条
+            
+            */
+
+            /* overflow: scroll; */
+            overflow: auto;
+            /* overflow-x: hidden;
+            overflow-y: ; */
+        }
+
+        .box2{
+            background-color: tomato;
+            width: 100px;
+            height: 300px;
+        }
+
+        .box3{
+            height: 300px;
+            width: 300px;
+            background-color: pink;
+            margin-left: 300px;
+            padding-left: 300px;
+            border: 20px double red;
+            background-clip: content-box;
+            background-clip: padding-box;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+</body>
+</html>

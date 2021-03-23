@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块和行内元素</title>
+</head>
+<body>
+    <!--
+        块元素（block element）
+            -在网页中一般使用块元素对页面进行宏观布局
+        行内元素（inline element）eg:strong em q等
+            -行内元素主要用来包裹文字
+
+
+            -一般情况下会在块元素中放置行内元素，不会在行内元素中放置块元素！！！！现在行内元素中好像可以放置块元素了
+            -块元素中基本能放任何元素
+            -p元素中不能放任何的块元素（注意，p元素本来就是块元素）
+    -->
+    <!--
+        测试行内元素中放置块元素
+    -->
+    <strong>哇！中奖了！
+        <p>骗你的了</p>
+    </strong>哈哈
+    <!--
+        测试p元素中放块元素
+    -->
+    <p>我是一个p元素，<h1>这是p标签内的一个块元素</h1>，我是一个p元素</p>
+
+    <!--
+        浏览器在解析网页时，会自动对网页中不符合规范的内容进行修正
+        比如:
+            -标签写在了根元素（html）的外部
+            -p元素中嵌套了块元素
+            -根元素中出现了head和body之外的子元素
+    -->
+    <i>nishi <div>woyoulaicuoledifang</div></i>
+</body>
+</html>
+
+<h1>我就是要把这个h1写在html外边</h1>

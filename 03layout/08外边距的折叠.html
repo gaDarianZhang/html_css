@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距的折叠</title>
+
+    <style>
+
+        .box1, .box2{
+            width: 200px;
+            height: 200px;
+            /* font-size: 40px; */
+        }
+        /* 
+            垂直外边距的重叠：
+                -相邻的垂直方向的外边距会发生重叠现象
+                -兄弟元素：
+                    -兄弟元素间的相邻垂直外边距会取两者之间的较大值
+                    -特殊情况：相邻外边距为一正一负，则取两者的和；
+                                !!!!!!如果相邻都为负值，则取绝对值较大的!!!!!!!!!。
+                    -兄弟元素之间的重叠现象对于开发是有利的，不需处理
+
+                -父子元素：
+                    -父子元素间相邻外边距，子元素的上外边距会传递给父元素，而且是以较大的为准
+                    -父子外边距的折叠会影响页面布局，必须进行处理
+                    -   方法：
+                        -1.将父元素加一个padding-top,这样会把整个父元素撑大，
+                            需要再修改一下父元素的尺寸
+                        -2.有这样的影响是因为父子的顶部外边距相邻，可以给父元素
+                            加一个border-top。但是这样又会让整个大了一个像素
+                        -加margin是不行的
+                        
+         */
+        .box1{
+            background-color: #bfa;
+            margin-bottom: -50px;
+        }
+
+        .box2{
+            background-color: tomato;
+            margin-top: -100px;
+        }
+
+        .box3{
+            width: 150px;
+            height: 150px;
+            /* padding-top: 50px; */
+            background-color: #bfa;
+            margin-top: -50px;
+        }
+
+        .box4{
+            width: 100px;
+            height: 100px;
+            /* padding: 20px; */
+            background-color: blue;
+            /* margin-bottom: 100px; */
+            margin-top: 20px;
+            /*如果只是给父元素顶部加一个margin的话，子元素加margin后，父元素也还是会随着移动的*/
+            /* padding-top: 100px; */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

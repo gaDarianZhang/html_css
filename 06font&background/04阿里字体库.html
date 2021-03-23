@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿里字体库</title>
+    <link rel="stylesheet" href="./icon-font/iconfont.css">
+    <style>
+        /* 使用unicode编码 */
+        i.iconfont{
+            font-size: 500px;
+            color: green;
+        }
+        /* 使用font class */
+        span.iconfont{
+            font-size: 500px;
+        }
+        /* 使用unicode后的一串数字 */
+        p::before{
+            content: '\e61c';
+            font-family: 'iconfont';
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 使用unicode编码 -->
+    <i class="iconfont">&#xe61c;</i>
+    <i class="iconfont">&#xe61e;</i>
+    <i class="iconfont">&#xe640;</i>
+    <i class="iconfont">&#xe63b;</i>
+    <i class="iconfont">&#xe630;</i>
+    <!-- 使用font class -->
+    <i class="iconfont icon-zhixianghuishou"></i>
+    <span class="iconfont icon-qitalaji-yicixingcanju"></span>
+
+    <p>HEllo</p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度塌陷的最终解决方案</title>
+    <style>
+        .box1{
+            border: 5px red solid;
+        }
+        .box2{
+            height: 100px;
+            width: 100px;
+            background-color: sandybrown;
+            float: left;
+        }
+
+
+        /* 因为clear的原理就是加上一个上边float元素的margin，
+            所以这样就能把父元素给撑起来。而且box3里边又没有内容，不会影响网页视觉效果。
+            但是在html负责结构布局，在html中凭空加一个没有用的块不合适，应该在css代码中添加
+         */
+        /* .box3{
+            clear: both;
+            
+        } */
+        .box1::after{/*是一个行内元素*/
+            /* 这三句都是必须的 */
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- <div class="box3"></div> -->
+    </div>
+</body>
+</html>
